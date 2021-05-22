@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+{% block name %}
+<title>Temperature detail</title>
+{% endblock %}
+{% block content %}
+<div class="otakoi">
+  <ul class="list-group">
+    <li class="list-group-item" style="background-color: gray;">Місцезнаходження: {{ temperature.sensor_location }}</li>
+    <li class="list-group-item">Дата заміру: {{ temperature.date}}</li>
+    <li class="list-group-item">Час заміру: {{ temperature.time }}</li>
+    <li class="list-group-item">Температура: {{ temperature.temperature}}</li>
+    <li class="list-group-item">Назва датчика: {{ temperature.sensor_name }}</li>
+    <li class="list-group-item">Модель датчика: {{ temperature.sensor_model }}</li>
+    <li class="list-group-item">ID: {{ temperature.url}}</li>
+
+  </ul>
+</div>
+{% endblock content%}

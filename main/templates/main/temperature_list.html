@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+{% block name %}
+<title>Temperature list</title>
+{% endblock %}
+{% block content %}
+<a href="{% url 'temperature_create' %}" class='btn btn-success'>Form Create</a>
+
+
+  {% for temperature in temperature_list %}
+    <div class="otakoi">
+      <ul class="list-group">
+        <a href="{{ temperature.get_absolute_url }}" class="list-group-item">{{ temperature.sensor_name }}</a>
+        <li class="list-group-item">{{ temperature.sensor_model}}</li>
+        <li class="list-group-item">{{ temperature.sensor_location }}</li>
+      </ul>
+    </div>
+  {% endfor %}
+{% endblock content%}
