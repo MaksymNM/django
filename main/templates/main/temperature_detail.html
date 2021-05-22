@@ -12,6 +12,7 @@
     <li class="list-group-item">Назва датчика: {{ temperature.sensor_name }}</li>
     <li class="list-group-item">Модель датчика: {{ temperature.sensor_model }}</li>
     <li class="list-group-item">ID: {{ temperature.url}}</li>
+    <a href="{% url 'temperature_download' temperature.pk %}" class='btn btn-secondary'>Export</a>
 
   </ul>
 </div>

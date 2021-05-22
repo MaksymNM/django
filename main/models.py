@@ -19,3 +19,15 @@ class Temperature(models.Model):
         return self.sensor_name
 
 
+class PdfMaker(models.Model):
+    name = models.CharField("Назва", max_length=150)
+    time = models.TimeField("Час публікації")
+    type = models.CharField("Тип оповіщення", max_length=150)
+    email = models.EmailField("Ел. почта")
+    url = models.SlugField(max_length=160, unique=True, null=False)
+
+    def get_absolute_url(self):
+        return reverse("pdf_detail", kwargs={"slug": self.url})
+
+    def __str__(self):
+        return self.name
